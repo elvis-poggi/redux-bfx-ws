@@ -1,10 +1,12 @@
-import { isArray, isObject, maxBy, omit, values } from 'lodash'
+import { isArray, isObject } from 'lodash'
 import { getChannelInfo } from '../../websocket/subscriptions'
 import { tickerMessage } from './tickers.actions'
+import { tradeMessage } from './trades.action'
+import { booksMessage } from './books.actions'
 
 export function isValidDataMessage (msg) {
   const channelInfo = getChannelInfo(msg[0])
-  console.log('cInfo', channelInfo)
+  // console.log('cInfo', channelInfo)
   return (isArray(msg) && isObject(channelInfo))
 }
 
@@ -17,10 +19,10 @@ export function messageAction (msg = []) {
   switch (channelInfo.channel) {
     case 'ticker':
       return tickerMessage(msg, channelInfo)
-    // case 'trades':
-    //   return // calls Trades actionCreator
-    // case 'book':
-    //   return // calls Books actionCreator
+    case 'trades':
+      return tradeMessage(msg, channelInfo)
+    case 'book':
+      return booksMessage(msg)
     default:
       return {
         type: 'UNKNOWN_DATA_MESSAGE',
