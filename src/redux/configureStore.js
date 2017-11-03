@@ -1,6 +1,11 @@
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux'
 import tickers from './reducers/tickers.reducer'
+import trades from './reducers/trades.reducer'
+import books from './reducers/books.reducer'
 
 export function configureStore () {
-  return createStore(tickers, {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+  const reducers = combineReducers({
+    tickers, trades, books
+  })
+  return createStore(reducers, {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 }
