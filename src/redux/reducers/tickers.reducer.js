@@ -1,10 +1,10 @@
-const tickers = (state = {}, action = {}, payload) => {
-  switch (action.type) {
+const tickers = (state = {}, action = {}) => {
+  const { type, payload = {} } = action
+  switch (type) {
     case 'TICKER_UPDATE': {
-      console.log('ticker update action', action.payload)
       return {
         ...state,
-        [action.payload.symbol]: action.payload
+        [payload.symbol]: payload
       }
     }
     default:
