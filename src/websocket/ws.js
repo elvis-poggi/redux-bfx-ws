@@ -5,11 +5,11 @@ const wss = new window.WebSocket(url)
 
 export function init (store = {}) {
   wss.onopen = (event) => {
-    console.log('Ws connected')
+    // console.log('Ws connected')
   }
   wss.onmessage = (rawMsg) => {
     const msg = JSON.parse(rawMsg.data)
-    console.log('Message received', msg)
+    // console.log('Message received', msg)
     if (isValidDataMessage(msg)) {
       // new data
       // store must be updated
@@ -24,13 +24,13 @@ export function init (store = {}) {
     }
   }
   wss.onclose = () => {
-    console.log('Ws closed')
+    // console.log('Ws closed')
   }
   wss.onerror = () => {
-    console.log('Connection error')
+    // console.log('Connection error')
   }
   wss._send = (msg) => {
-    console.log('Ws send', msg)
+    // console.log('Ws send', msg)
     wss.send(JSON.stringify(msg))
   }
 
