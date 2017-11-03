@@ -34,7 +34,7 @@ export function booksSub (symbol = 'tBTCUSD', precision = 'p0', frequency = 'f0'
 }
 
 export function unSub (chanId) {
-  console.log('unSub', chanId)
+  // console.log('unSub', chanId)
   window.wsSend({
     event: 'unsubscribe',
     chanId: chanId
@@ -46,7 +46,7 @@ let subscriptions = {
 }
 
 export function getChannelInfo (chanId) {
-  console.log('getChnnelInfo', chanId, subscriptions, subscriptions[chanId])
+  // console.log('getChnnelInfo', chanId, subscriptions, subscriptions[chanId])
   return subscriptions[chanId]
 }
 
