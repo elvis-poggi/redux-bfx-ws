@@ -3,19 +3,30 @@ import React, { Component } from 'react'
 import './App.css'
 import Debug from './components/Debug'
 import { connect } from 'react-redux'
+import TickerList from './components/TickerList'
 
 class App extends Component {
   render () {
-    const { trades, tickers, bids, asks } = this.props
+    const {
+      trades,
+      tickers,
+      bids,
+      asks
+    } = this.props
     return (
       <div className='App'>
         <header className='App-header'>
           <h1 className='App-title'>Welcome to React</h1>
         </header>
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
-          <div >Trades: <Debug data={trades} /></div>
-          <div >Ticker: <Debug data={tickers} /> </div>
-          <div >
+          <div>
+            Trades:
+            <Debug data={trades} />
+          </div>
+          <div>
+            Tickers:<TickerList data={tickers} />
+          </div>
+          <div>
             Bids:<Debug data={bids} />
           </div>
           <div>
