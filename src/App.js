@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-// import logo from './logo.svg'
 import './App.css'
-import Debug from './components/Debug'
+// import Debug from './components/Debug'
 import { connect } from 'react-redux'
 import TickerList from './components/TickerList'
 import TradeList from './components/TradeList'
+import Book from './components/Book'
 
 class App extends Component {
   render () {
@@ -16,21 +16,15 @@ class App extends Component {
     } = this.props
     return (
       <div className='App'>
-        <header className='App-header'>
-          <h1 className='App-title'>Welcome to React</h1>
-        </header>
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
           <div>
-            Trades:<TradeList data={trades} />
+            <TradeList data={trades} />
           </div>
           <div>
-            Tickers:<TickerList data={tickers} />
+            <TickerList data={tickers} />
           </div>
           <div>
-            Bids:<Debug data={bids} />
-          </div>
-          <div>
-            Asks:<Debug data={asks} />
+            <Book asks={asks} bids={bids} />
           </div>
         </div>
       </div>
