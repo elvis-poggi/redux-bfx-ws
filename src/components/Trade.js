@@ -6,7 +6,13 @@ const Trade = (props = {}) => {
   const { data = {} } = props
   return [
     <Cell hasColor value={data.amount}>
-      <ColoredArrow value={data.amount}> V </ColoredArrow>
+      <ColoredArrow value={data.amount}>
+        {
+        (data.amount > 0)
+        ? <i className='fa fa-chevron-up' />
+        : <i className='fa fa-chevron-down' />
+      }
+      </ColoredArrow>
     </Cell>,
     <Cell hasColor value={data.amount}>
       {new Date(data.mts).toLocaleTimeString()}
