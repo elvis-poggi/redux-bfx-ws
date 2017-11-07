@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-size: 12px;
 }
 
 .App-logo {
@@ -27,12 +28,20 @@
   to { transform: rotate(360deg); }
 }
 
-.wrapper {
+.tickerWrapper {
   display: grid;
-  grid-template-columns: 150px 150px 150px 150px 150px 150px 150px 150px;
+  grid-template-columns: 90px 90px 120px 100px;
   text-align: left;
   border: 1px solid gray;
 }
+
+.tradesWrapper {
+  display: grid;
+  grid-template-columns: 50px 80px 80px 80px;
+  text-align: center;
+  border: 1px solid gray;
+}
+
 
 .row {
   background: gray;
