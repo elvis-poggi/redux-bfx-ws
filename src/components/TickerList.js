@@ -5,15 +5,11 @@ import Cell from './Cell'
 const TickerList = ({data}) => {
   const keys = Object.keys(data)
   return (
-    <div className='wrapper'>
-      <Cell isHeader>Symbol</Cell>
-      <Cell isHeader>Bid</Cell>
-      <Cell isHeader>Ask</Cell>
-      <Cell isHeader>Daily Change</Cell>
-      <Cell isHeader>Last Price</Cell>
-      <Cell isHeader>Volume</Cell>
-      <Cell isHeader>High</Cell>
-      <Cell isHeader>Low</Cell>
+    <div className='tickerWrapper'>
+      <Cell isHeader>SYMBOL</Cell>
+      <Cell isHeader>LAST</Cell>
+      <Cell isHeader>24HR</Cell>
+      <Cell isHeader>VOLUME SELF</Cell>
       {keys.map(key => (
         <Ticker data={data[key]} key={key} />
     ))}
