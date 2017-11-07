@@ -4,6 +4,7 @@ import './App.css'
 import Debug from './components/Debug'
 import { connect } from 'react-redux'
 import TickerList from './components/TickerList'
+import TradeList from './components/TradeList'
 
 class App extends Component {
   render () {
@@ -20,8 +21,7 @@ class App extends Component {
         </header>
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
           <div>
-            Trades:
-            <Debug data={trades} />
+            Trades:<TradeList data={trades} />
           </div>
           <div>
             Tickers:<TickerList data={tickers} />
