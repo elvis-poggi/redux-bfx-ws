@@ -3,6 +3,7 @@ import { getChannelInfo } from '../../websocket/subscriptions'
 import { tickerMessage } from './tickers.actions'
 import { tradeMessage } from './trades.action'
 import { booksMessage } from './books.actions'
+import { candleMessage } from './candles.actions'
 
 export function isValidDataMessage (msg) {
   const channelInfo = getChannelInfo(msg[0])
@@ -23,6 +24,8 @@ export function messageAction (msg = []) {
       return tradeMessage(msg, channelInfo)
     case 'book':
       return booksMessage(msg)
+    case 'candles':
+      return candleMessage(msg, channelInfo)
     default:
       return {
         type: 'UNKNOWN_DATA_MESSAGE',

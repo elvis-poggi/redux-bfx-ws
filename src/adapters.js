@@ -35,3 +35,11 @@ export function booksAdapter (rawData = []) {
   }
   return result
 }
+
+export function candleAdapter (rawData = []) {
+  let result = {
+    mts: rawData[0],
+    close: rawData[2]
+  }
+  return result
+}
