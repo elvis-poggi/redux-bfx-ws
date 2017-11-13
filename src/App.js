@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import TickerList from './components/TickerList'
 import TradeList from './components/TradeList'
 import Book from './components/Book'
+import Candles from './containers/Candles.container'
+// import candleData from './__candleMock'
 
 class App extends Component {
   render () {
@@ -12,10 +14,14 @@ class App extends Component {
       trades,
       tickers,
       bids,
-      asks
+      asks,
+      ws
     } = this.props
     return (
       <div className='App'>
+        <div>
+          <Candles pair='tBTCUSD' send={ws._send} />
+        </div>
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
           <div>
             <TradeList data={trades} />

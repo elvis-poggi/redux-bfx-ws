@@ -15,7 +15,7 @@ window.ws = ws
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App ws={ws} />
   </Provider>,
 document.getElementById('root'))
 registerServiceWorker()
