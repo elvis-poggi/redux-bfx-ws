@@ -50,6 +50,12 @@ export function getChannelInfo (chanId) {
   return subscriptions[chanId]
 }
 
+export function getSubscribedChannels () {
+  // returns subscribed channels ids
+  const keys = Object.keys(subscriptions)
+  return keys
+}
+
 export function getSubscriptions () {
   return subscriptions
 }
@@ -60,6 +66,7 @@ export function isSubscription (msg) {
 
 export function digestSubscription (subMsg) {
   subscriptions[subMsg.chanId] = subMsg
+  getSubscribedChannels()
 }
 
 export function digestUnsub (msg) {
