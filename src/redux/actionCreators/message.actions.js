@@ -7,11 +7,9 @@ import { candleMessage } from './candles.actions'
 
 export function isValidDataMessage (msg) {
   const channelInfo = getChannelInfo(msg[0])
-  // console.log('cInfo', channelInfo)
   return (isArray(msg) && isObject(channelInfo))
 }
 
-// takes data message from wss, returns action
 export function messageAction (msg = []) {
   if (msg[1] === 'hb') {
     return false

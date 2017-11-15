@@ -15,16 +15,10 @@ const books = (state = {}, action = {}) => {
     }
     case 'BOOK_REMOVE': {
       const { side, price } = payload
-      console.log('REMOVE', side, price, 'from', state)
-      // return {
-      //   ...state,
-      //   [ side ]: omit(state[ side ], price)
-      // }
       const res = {
         ...state,
         [ side ]: omit(state[ side ], price)
       }
-      console.log(res)
       return res
     }
     case 'BOOK_UPDATE': {
