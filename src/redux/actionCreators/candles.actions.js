@@ -1,4 +1,4 @@
-import { isArray } from 'lodash'
+import { isArray, reverse } from 'lodash'
 import { candleAdapter } from '../../adapters'
 
 export function candleMessage (msg = [], channelInfo) {
@@ -8,7 +8,7 @@ export function candleMessage (msg = [], channelInfo) {
     return {
       type: 'CANDLE_SNAPSHOT',
       payload: {
-        data: msg[1].map(row => candleAdapter(row)),
+        data: reverse(msg[1].map(row => candleAdapter(row))),
         symbol
       }
     }
