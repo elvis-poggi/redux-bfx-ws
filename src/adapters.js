@@ -38,7 +38,7 @@ export function booksAdapter (rawData = []) {
 
 export function candleAdapter (rawData = []) {
   let result = {
-    mts: rawData[0],
+    mts: new Date(rawData[0]).toLocaleDateString(),
     close: rawData[2]
   }
   return result
