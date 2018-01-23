@@ -90,10 +90,10 @@ class App extends Component {
         </div>
         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly'}}>
           <div>
-            <TradeList data={trades} />
+            <TickerList data={tickers} />
           </div>
           <div>
-            <TickerList data={tickers} />
+            <TradeList data={trades} />
           </div>
           <div>
             <Book asks={asks} bids={bids} />

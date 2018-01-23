@@ -13,7 +13,7 @@ const TradeList = ({data}) => {
   const keys = Object.keys(data)
   return (
     <div>
-      <p>TRADE</p>
+      <p>TRADES</p>
       <div style={s}>
         <Cell isHeader />
         <Cell isHeader>TIME</Cell>

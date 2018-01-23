@@ -13,7 +13,7 @@ const TickerList = ({data}) => {
   const keys = Object.keys(data)
   return (
     <div>
-      <p>TICKER</p>
+      <p>TICKERS</p>
       <div style={s}>
         <Cell isHeader>SYMBOL</Cell>
         <Cell isHeader>LAST</Cell>
